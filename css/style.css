@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: hsl(224, 23%, 55%);
+    --secondry-color: hsl(223, 47%, 23%);
+    --third-color: hsl(245, 75%, 52%); 
+}
+body {
+    margin: 0;
+    background-color: hsl(225, 100%, 94%);
+    font-size: 16px;
+    font-family: "Red Hat Display";
+}
+body > svg:first-of-type {
+    width: 100%;
+}
+body > svg:last-of-type {
+    display: none;
+}
+.container {
+    background-color: hsl(0, 0%, 100%);
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+}
+.container > svg {
+    border-radius: 10px 10px 0 0;
+}
+.container h1 {
+    font-size: 1.5em;
+    color: var(--secondry-color);
+    margin: 20px 0;
+}
+.container h1 + p {
+    color: var(--primary-color);
+    margin: 0 50px;
+}
+.container .box {
+    background-color: hsl(225, 100%, 98%);
+    margin: 10px 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container .box .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: -50px;
+}
+.container .box .text p:first-of-type {
+    color: var(--secondry-color);
+    font-weight: 900;
+}
+.container .box .text p:last-of-type {
+    margin-top: -10px;
+    font-size: 0.8em;
+    color: var(--primary-color);
+}
+.container .box > p {
+    text-decoration: underline;
+    color: var(--third-color);
+    font-weight: 700;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.container .box > p:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.container .box + p {
+    background-color: var(--third-color);
+    color: hsl(0, 0%, 100%);
+    margin: 20px 50px;
+    border-radius: 15px;
+    padding: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.container .box + p:hover {
+    background-color: var(--primary-color)
+}
+.container > p:last-of-type {
+    color: var(--primary-color);
+    font-size: 0.8em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.container > p:last-of-type:hover {
+    color: var(--secondry-color);
+}
+@media (max-width: 766px) {
+    body > svg:first-of-type {
+        display: none;
+    }
+    body > svg:last-of-type {
+        display: initial;
+        width: 100%;
+    }
+    .container {
+        width: 300px;
+    }
+    .container > svg {
+        transform: translateX(-75px) scaleX(0.66666);
+    }
+    .container h1 {
+        font-size: 1.25em;
+    }
+    .container h1 + p {
+        font-size: 0.75em;
+    }
+    .container .box svg {
+        transform: scale(0.6);
+    }
+    .container .box .text {
+        margin-left: -20px;
+    }
+    .container .box .text,
+    .container .box > p,
+    .container .box + p,
+    .container > p:last-of-type {
+        font-size: 0.7em;
+    }
+}
