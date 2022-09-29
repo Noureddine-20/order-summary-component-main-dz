@@ -11,24 +11,24 @@ body {
     background-color: hsl(225, 100%, 94%);
     font-size: 16px;
     font-family: "Red Hat Display";
-}
-body > svg:first-of-type {
-    width: 100%;
-}
-body > svg:last-of-type {
-    display: none;
+    background-image: url(../img/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 .container {
     background-color: hsl(0, 0%, 100%);
-    width: 450px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 350px;
     text-align: center;
     border-radius: 10px;
 }
-.container > svg {
+.container .image {
+    width: 350px;
+}
+.container .image img {
+    width: 100%;
     border-radius: 10px 10px 0 0;
 }
 .container h1 {
@@ -38,34 +38,43 @@ body > svg:last-of-type {
 }
 .container h1 + p {
     color: var(--primary-color);
-    margin: 0 50px;
+    margin: 0 auto;
+    width: 240px;
+    font-size: 0.8em;
+    line-height: 1.5;
 }
 .container .box {
     background-color: hsl(225, 100%, 98%);
-    margin: 10px 50px;
+    margin: 20px auto;
+    width: 230px;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+.container .box img {
+    width: 35px;
+}
 .container .box .text {
     display: flex;
     flex-direction: column;
-    margin-left: -50px;
+    margin-left: -25px;
 }
 .container .box .text p:first-of-type {
     color: var(--secondry-color);
     font-weight: 900;
+    font-size: 0.8em;
 }
 .container .box .text p:last-of-type {
     margin-top: -10px;
-    font-size: 0.8em;
+    font-size: 0.7em;
     color: var(--primary-color);
 }
 .container .box > p {
     text-decoration: underline;
     color: var(--third-color);
     font-weight: 700;
+    font-size: 0.9em;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -76,11 +85,14 @@ body > svg:last-of-type {
 .container .box + p {
     background-color: var(--third-color);
     color: hsl(0, 0%, 100%);
-    margin: 20px 50px;
+    font-size: 0.9em;
+    margin: 20px auto;
+    width: 230px;
     border-radius: 15px;
     padding: 10px;
     transition: 0.3s;
     cursor: pointer;
+    box-shadow: 0px 10px 10px 10px #eee;
 }
 .container .box + p:hover {
     background-color: var(--primary-color)
@@ -95,33 +107,42 @@ body > svg:last-of-type {
     color: var(--secondry-color);
 }
 @media (max-width: 766px) {
-    body > svg:first-of-type {
-        display: none;
-    }
-    body > svg:last-of-type {
-        display: initial;
-        width: 100%;
+    body {
+        background-image: url(../img/pattern-background-mobile.svg);
     }
     .container {
-        width: 300px;
+        width: 250px;
     }
-    .container > svg {
-        transform: translateX(-75px) scaleX(0.66666);
+    .container .image {
+        width: 250px;
     }
     .container h1 {
         font-size: 1.25em;
     }
     .container h1 + p {
-        font-size: 0.75em;
+        font-size: 0.55em;
+        width: 170px;
     }
-    .container .box svg {
-        transform: scale(0.6);
+    .container .box {
+        width: 200px;
+        margin: 20px auto;
+    }
+    .container .box img {
+        width: 20px;
     }
     .container .box .text {
         margin-left: -20px;
     }
-    .container .box .text,
-    .container .box > p,
+    .container .box .text p:first-of-type{
+        font-size: 0.65em;
+    }
+    .container .box .text p:last-of-type {
+        font-size: 0.6em;
+    }
+    .container .box + p {
+        width: 200px;
+        box-shadow: 0px 5px 5px 5px;
+    }
     .container .box + p,
     .container > p:last-of-type {
         font-size: 0.7em;
